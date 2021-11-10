@@ -6,7 +6,7 @@
 
 /* Libraries */ 
 #include <pthread.h> 
-#include < stdio.h> 
+#include <stdio.h> 
 #include <stdlib.h> 
 #include <stdbool.h> 
 
@@ -22,7 +22,7 @@ int sudoku [9] [9] = {
         {2, 8, 5, 4, 7, 3, 9, 1, 6} 
 }; 
 
-bool verification [11]; // Fix for verification of threads finished with success (1) or failure (0) 
+bool verification[11]; // Fix for verification of threads finished with success (1) or failure (0) 
 int auxSquares = 2; // used to validate the threads that go through the 3x3 squares 
 
 typedef struct {// It helps us to pass the data to the thread 
