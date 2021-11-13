@@ -1,4 +1,7 @@
 /* Chapter 4 , Project-1 Assignment of Book Operating System by Silberschatz 
+
+  Thanks @ https://github.com/SLynne/CSc4320_OperatingSystems/blob/master/Assignment_2_SourceCode.c for the reference
+  
    
 */
 
