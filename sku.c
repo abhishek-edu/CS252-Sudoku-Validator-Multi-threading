@@ -143,7 +143,8 @@ int main()
 	
         /* Finally, after all children returns, you can check the status array that is visible to everyone and see if it is valid. You then print out the final checking result*/
 	int k=0;
-    while(k < 11){
+    while(k < 11)
+    {
 	
             /*if the thread is valid (contains all numbers 1-9) then the value of valid[k] will be 1, continue to check all elements of valid until 
              either the array ends (k = 11) or the value of valid[k] is 0. If the loop terminates on its own (k = 11), then print the "is Solved" statement and 
@@ -151,15 +152,17 @@ int main()
              * the "NOT Solved" statement and end the program.
              */
             
-            if(valid[k] == 1){               
+            if(valid[k] == 1)
+	    {               
 		k++;
             }
-            else{
+            else
+	    {
                 printf("The Sudoku Puzzle is NOT solved. \n");
                 exit(0);
             }
             
-        }
+     }
         printf("The Sudoku Puzzle is solved. \n");
 	
 
@@ -167,7 +170,10 @@ int main()
 }
 
 
+
+
 /*thread code for child checking all columns*/
+
 void *column_worker(void *params)
 {
     int i, j; 
@@ -179,18 +185,21 @@ void *column_worker(void *params)
     /*sorting sudoku column; this will put the column into a sorted order and check for duplicates
       if there are duplicates, this section is not valid and returns 0 for the column_worker;*/
     
-    for(i = beginCol; i < 9; i++){
+    for(i = beginCol; i < 9; i++)
+    {
      
 	int col[9]= {0}; //array to hold sorted column
         
-        for(j = beginRow; j < 9; j++){
+        for(j = beginRow; j < 9; j++)
+	{
             
             int val = board[i][j]; //this specific value in the column
             
             /*if the coresponding array element for the value is 0, it has not been seen and 
 		we will input this value to the sorted column array. */
             
-	    if(col[val-1] == 0 && val > 0){
+	    if(col[val-1] == 0 && val > 0)
+	    {
                col[val-1] = val;
 		
             }
@@ -200,7 +209,7 @@ void *column_worker(void *params)
 		valid[0] = 0;
                 pthread_exit(0);
             }
-        }
+         }
     }   
     valid[0] = 1;
     pthread_exit(0);	       
@@ -208,7 +217,8 @@ void *column_worker(void *params)
 
 
 /*thread code for child checking all rows*/
-void *row_worker(void *params){
+void *row_worker(void *params)
+{
 
     int i, j; 
     
@@ -219,18 +229,21 @@ void *row_worker(void *params){
     /*sorting sudoku row; this will put the row into a sorted order and check for duplicates
       if there are duplicates, this section is not valid and returns 0 for the row_worker;*/
     
-    for(i = beginCol; i < 9; i++){
+    for(i = beginCol; i < 9; i++)
+    {
         
         int row[9]= {0};//array to hold sorted row
         
-        for(j = beginRow; j < 9; j++){
+        for(j = beginRow; j < 9; j++)
+	{
             
             int val = board[i][j];
             
             /*if the corresponding array element for the value is 0, it has not been seen and 
 		we will input this value to the sorted column array. */
             
-            if(row[val-1] == 0 && val > 0){
+            if(row[val-1] == 0 && val > 0)
+	    {
                 row[val-1] = val;
             }
             
@@ -249,7 +262,8 @@ void *row_worker(void *params){
 
 
 /*thread code for child checking all 3x3 subgrids*/
-void *square_worker(void *params){
+void *square_worker(void *params)
+{
 	
     int i, j;
 
@@ -262,15 +276,18 @@ void *square_worker(void *params){
 	
     int square[9] = {0}; //1d array to hold sorted 3x3 square
 
-    for (i = beginRow; i < beginRow + 3; ++i) {
-        for (j = beginCol; j < beginCol + 3; ++j) {
+    for (i = beginRow; i < beginRow + 3; ++i) 
+    {
+        for (j = beginCol; j < beginCol + 3; ++j) 
+	{
             
             int val = board[i][j];
             
             /*if the corresponding array element for the value is 0, it has not been seen and 
 		we will input this value to the sorted column array. */
 	   
-            if (square[val-1] == 0 && val > 0) {
+            if (square[val-1] == 0 && val > 0) 
+	    {
                 square[val-1] = val;
             }
             
