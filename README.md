@@ -4,7 +4,7 @@
 # Disclaimer
 * This Problem is taken From the 10th edition Book of "Operating System Concepts"  by Avi Silberschatz ,Peter Baer Galvin and Greg Gagne .
 * Project 1 of Chapter no. 4
-* Taken help from source code found @ https://github.com/crvargasm/Sudoku-Solution-Validator 
+* Taken help from source code found @ https://github.com/SLynne/CSc4320_OperatingSystems/blob/master/Assignment_2_SourceCode.c
 
    # Project 1 — Sudoku Solution Validator
 A Sudoku puzzle uses a 9 × 9 grid in which each column and row, as well as
