@@ -24,12 +24,12 @@ int board[9][9]=
         {2, 8, 5, 4, 7, 3, 9, 1, 6} 
 }; 
 //The sudoku problem  is imported into this board
-/* You will need to declare an array of integer values that is visible to each thread. The value in the array (0 or 1) indicates whether the worker thread's number is valid (see "Returning Results to the Parent Thread" in the textbook's project description) */
+/* We will need to declare an array of integer values that is visible to each thread. The value in the array (0 or 1) indicates whether the worker thread's number is valid (see "Returning Results to the Parent Thread" in the textbook's project description) */
 int valid[11]; //When the threads are joined, if that thread is a valid part of a sudoku puzzle, it returns 1 to valid[], else it returns 0
 int subgridCt = 2; //used to track through valid array sections for the 3x3 subgrids
 
 
-/* You will need a structure to store the information to be passed to each thread (see "Passing Parameters to Each Thread" in the textbook's project description)*/
+/* We will need a structure to store the information to be passed to each thread (see "Passing Parameters to Each Thread" in the textbook's project description)*/
 typedef struct
 {
     
@@ -52,7 +52,7 @@ int main()
    
      
    
-        /*You need to assign values to the structure variable. Then you can create multiple worker threads by passing the information using the structure variable*/
+        /*We need to assign values to the structure variable. Then We can create multiple worker threads by passing the information using the structure variable*/
         parameters *checkRows = (parameters *) malloc(sizeof(parameters));
         checkRows->row = 0;
         checkRows->column = 0;
@@ -127,7 +127,7 @@ int main()
      
         
 
-	/*You need to call pthread_join() for each children thread so that the parent will wait*/
+	/*We need to call pthread_join() for each children thread so that the parent will wait*/
 	pthread_join(col_thread, &cols);
         pthread_join(row_thread, &rows);
         pthread_join(first_thread, &first_square);
