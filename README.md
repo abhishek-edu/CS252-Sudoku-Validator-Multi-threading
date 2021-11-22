@@ -26,7 +26,7 @@ suggested strategy is to create threads that check the following criteria:
 #  How to Use
   * Download sku.c file on the Linux Machine
   * Open terminal and go to the location where sku.c is saved.
-  * To compile the this code we need to type "gcc -lpthread"  and press enter
+  * To compile the this code we need to type "gcc sku.c -lpthread"  and press enter
   * type "./a.out" and press enter
   * Then It will show the result , whether the solution is Valid Or not for the default sudoku which is entered in the source code.
   * If we want to Validate a particular sudoku then , opn sku.c file and change the values of  board[9][9] to the one which you want to validate
