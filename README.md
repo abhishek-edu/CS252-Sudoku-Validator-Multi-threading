@@ -1,4 +1,4 @@
-# cs252-assignment-odd-sem2021
+# cs252-Sudoku Validator using multi threading
 
 *Checking solution of the Sudoku using Multi-Threading* 
 # Disclaimer
